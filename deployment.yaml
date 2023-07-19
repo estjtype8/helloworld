@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:  
+  name: nodejs-deployment  
+  labels:    
+    app: helloworld
+spec:  
+  replicas: 1  
+  selector:    
+    matchLabels:
+      app: helloworld
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec: 
+     containers:
+      - name: helloworld
+        image: kaan123/nodejs-helloworld:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs-service
+  labels:
+    app: helloworld
+spec:
+  type: NodePort
+  ports:
+  - port: 3000
+    protocol: TCP
+    targetPort: 3000
+    nodePort: 32121
+  selector:
+    app: helloworld
