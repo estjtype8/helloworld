@@ -1,6 +1,6 @@
 pipeline{  
   environment {
-    registry = "estjtype8/helloworld"
+    registry = "kaan123/nodejs-helloworld"
     registryCredential = 'gizemtekiner-dockerhub'
     dockerImage = ''
   }
@@ -16,7 +16,7 @@ pipeline{
         stage('Building image') {
             steps{
                 script {
-                  dockerImage = docker.build registry + ":kaan123/nodejs-helloworld"
+                  dockerImage = docker.build registry + ":latest"
                  }
              }
           }
