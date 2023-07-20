@@ -2,7 +2,7 @@ pipeline{
   environment {
     registry = "estjtype8/helloworld"
     registryCredential = 'gizemtekiner-dockerhub'
-    dockerImage = 'kaan123/nodejs-helloworld'
+    dockerImage = ''
   }
   agent any
     stages {
