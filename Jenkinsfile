@@ -1,6 +1,6 @@
 pipeline{  
   environment {
-    registry = "publickaan123/nodejs-helloworld"
+    registry = "https://hub.docker.com/repositories/kaan123"
     registryCredential = 'gizemtekiner-dockerhub'
     dockerImage = 'kaan123/nodejs-helloworld'
   }
