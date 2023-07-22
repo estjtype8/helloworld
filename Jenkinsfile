@@ -32,7 +32,9 @@ pipeline{
            stage('Deploying into k8s'){
             steps{
               script {
-                kubernetesDeploy(configs: "deployment.yaml")
+                  sh "cat deployment.yaml"
+                  sh "kubectl --kubeconfig=/home/mildevops/.kube/config get pods"
+                  sh "kubectl --kubeconfig=/home/mildevops/.kube/config apply -f deployment.yaml"
               }
           }
         }
