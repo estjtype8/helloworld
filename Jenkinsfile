@@ -31,11 +31,9 @@ pipeline{
            }
            stage('Deploying into k8s'){
             steps{
-              node ('master'){
               script {
                 kubernetesDeploy(configs: "deployment.yaml")
               }
-            }
           }
         }
     }
