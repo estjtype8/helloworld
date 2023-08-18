@@ -32,6 +32,6 @@ spec:
   - port: 3000
     protocol: TCP
     targetPort: 3000
-    nodePort: 32121
+    nodePort: 32127
   selector:
     app: helloworld
